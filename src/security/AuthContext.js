@@ -6,10 +6,12 @@ export const useAuth = () => useContext(AuthContext);
 function AuthProvider({ children }) {
 
     const [authenticated, setAuthenticated] = useState(false);
+    const [username, setUsername] = useState(null);
 
     function login(username, password) {
-        if ((username === `orangebox` && password === 'orangebox')) {
+        if ((password === 'orangebox')) {
             setAuthenticated(true);
+            setUsername(username);
             return true;
         }
 
@@ -22,7 +24,7 @@ function AuthProvider({ children }) {
     }
 
     return (
-        <AuthContext.Provider value={ {authenticated, login, logout} }>
+        <AuthContext.Provider value={ {authenticated, login, logout, username} }>
             {children}
         </AuthContext.Provider>
     );

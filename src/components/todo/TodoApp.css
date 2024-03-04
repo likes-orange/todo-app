@@ -3,12 +3,6 @@ label, input, button {
     padding: 5px;
 }
 
-table {
-    text-align: justify;
-    margin-left: auto;
-    margin-right: auto;
-}
-
 footer {
     bottom: 20px;
     position: absolute;
